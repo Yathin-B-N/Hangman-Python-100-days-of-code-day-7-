@@ -1,0 +1,33 @@
+import random
+
+
+def play():
+  print("Welcome to the number guessing game!")
+  print("I am guessing a number between 1 adn 100")
+  number = random.randint(1,100)
+  diff=input("enter the level or difficulty (hard) or (easy):\n")
+  if diff == "hard":
+    for i in range (0,5):
+      print(f"you have {5-i} attempts remaining to guess the number")
+      guess = int(input("Make a guess:\n"))
+      if guess<number:
+        print("Too low")
+      elif guess>number:
+        print("Too high")
+      else:
+        print("You got it")
+        play()
+  elif diff == "easy":
+    for i in range (0,10):
+      print(f"you have {10-i} attempts remaining to guess the number")
+      guess = int("Make a guess:\n")
+      if guess<number:
+        print("Too low")
+      elif guess>number:
+        print("Too high")
+      else:
+        print("You got it")
+        play()
+    
+play()
+  
